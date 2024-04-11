@@ -1,0 +1,46 @@
+INSERT INTO `DISCIPLINAS`(`SIGLA`, `PROFESSOR`, `MATRIZ_ANO`)
+VALUES
+('DS_BD1', 'CALU', 2023),
+('DS_BD2', 'RICARDO', 2023),
+('DS_MOBILE1', 'MARCIO', 2017),
+('DS_MOBILE2', 'PERALTA', 2017),
+('DS_IA1', 'MATHEUS', 2014),
+('DS_IA2', 'ANTONIO', 2014),
+('DS_CLOUD1', 'JORGE', 2011),
+('DS_CLOUD2', 'MARCOS', 2011),
+('ME_ELET1', 'SERJÃO', 2020),
+('ME_ELET2', 'LUCAS', 2020);
+###############################################################################################################
+INSERT INTO `TURMAS`(`SIGLA_TURMA`, `ANO_INÍCIO`, `DESCRIÇÃO`)
+VALUES
+('I1HS',  2023, 'TURMA_DS_SUMARÉ_1°SEM'),
+('I2HS',  2022, 'TURMA_DS_SUMARÉ_2°SEM'),
+('I1HN',  2017, 'TURMA_DS_NOVA_ODESSA_1°SEM'),
+('I2HN',  2016, 'TURMA_DS_NOVA_ODESSA_2°SEM'),
+('I1AS',  2014, 'TURMA_DS_SUMARÉ_1°SEM'),
+('I2AS',  2013, 'TURMA_DS_SUMARÉ_2°SEM'),
+('I1AN',  2011, 'TURMA_DS_NOVA_ODESSA_1°SEM'),
+('I2AN',  2010, 'TURMA_DS_NOVA_ODESSA_2°SEM'),
+('I1ES',  2020, 'TURMA_ME_SUMARÉ_1°SEM'),
+('I1EN',  2019, 'TURMA_ME_NOVA_ODESSA_2°SEM');
+
+####################################################################################################################
+INSERT INTO ALUNOS (ALUNO, SEXO, EMAIL, CODTURMA, CODDISCIPLINA)
+VALUES 
+('Fátima', 'Feminino', 'fatima.ber@gmail.com', 1, 8),
+('Diego', 'Masculino', 'diego.alves@hotmail.com', 2, 7),
+('Isabel', 'Feminino', 'isabelvascos@gmail.com', 3, 6),
+('Tereza', 'Feminino', 'tereza.65@gmail.com', 4, 5),
+('Rafael', 'Masculino', 'rafael.rafa@gmail.com', 5, 4),
+('Caroline', 'Feminino', 'carol.gomes@hotmail.com', 6, 3),
+('Alberto', 'Masculino', 'alberto.silva@hotmail.com', 7, 2),
+('Thomas', 'Masculino', 'thomas.costa@hotmail.com', 8, 1),
+('Leandra', 'Feminino', 'leandrasantoss@hotmail.com', 9, 10),
+('Roberto', 'Masculino', 'robertinho@gmail.com', 10, 9);
+###################################################################################################################
+SELECT DISCIPLINAS.CÓDIGO FROM ALUNOS 
+INNER JOIN DISCIPLINAS ON DISCIPLINAS.CÓDIGO = ALUNOS.CODDISCIPLINA
+WHERE ALUNO LIKE '%F%'
+
+(RESULTADO 8 E 4)
+##################################################################################################################
